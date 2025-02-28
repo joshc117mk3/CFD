@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+  <html>
+    
+  <link rel="stylesheet" href="CFD.css">
+  <head>
+<title>Community Recipies</title>
+    </head>
+
+      <body>
+
+<!---navbar--->
+      
+        <nav> <ul>
+        <li><a href="CFD.html">Home</a></li>
+        <li><a href="Methods.html">Methods</a></li>
+        <li><a href="SignUp.html">Sign-Up</a></li>
+        <li><a href="Recipies.html">Recipies</a></li>
+        <li><a href="Community Recipies.html">Community Recipies</a></li>
+        </nav>
+        
+        <main>
+
+
+
+<!---header--->
+
+<h1>Community Recipies</h1>
+<p>Share your Recipies and methods with the comunity!</p>
+<img src="C:\Users\lucas\Desktop\CFD website\images for website\comunity cooking.webp" alt="image of people cooking together">
+
+<body>
+
+
+  <!--- sumbission form--->
+
+  
+<h2>Submit Your Recipe</h2>
+
+  <form id="recipeForm" action="submit_recipe.php" method="POST" enctype="multipart/form-data">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required minlength="3">
+      <br><br>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br><br>
+
+      <label for="recipeTitle">Recipe Title:</label>
+      <input type="text" id="recipeTitle" name="recipeTitle" required>
+      <br><br>
+
+
+<!---dropdowns--->
+      
+
+<select name="meal type" id="meal type">
+        <option value="Meal type">Meal type</option>
+        <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+      <option value="dessert">Dessert</option>
+      <option value="snack">Snack</option>
+      <option value="drink">Drink</option>
+    </select> 
+    <br><br>
+      
+      
+      <select name="diet" id="diet">
+        <option value="Prefrence">Prefrence</option> 
+      <option value="vegan">Vegan</option>
+      <option value="vegetarian">Vegetarian</option>
+      <option value="pescatarian">Pescatarian</option>
+      <option value="meat">Meat</option>
+    </select> 
+    <br><br>
+    
+    <!---radio buttons--->
+     <fieldset>
+    <legend>Spice Level</legend>
+    <label for="spicelevel" id="spicelevel"></label>
+    
+    <input id="Sweet" type="radio" name="spicelevel" value="01">
+    <label for="Sweet">Sweet</label>
+    
+    <input  id="Mild"   type="radio" name="spicelevel" value="02">
+    <label for="Mild">Mild</label>
+    
+    <input id="Medium"   type="radio" name="spicelevel" value="03">
+    <label for="Medium">Medium</label>
+    
+    <input  id="Hot" type="radio" name="spicelevel" value="04">
+    <label for="Hot">Hot</label>
+    
+    <input id="Very Hot"   type="radio" name="spicelevel" value="05">
+    <label for="Very Hot"> Very Hot</label>
+    </fieldset>
+
+
+    <fieldset>
+    <legend>Difficulty Level</legend>
+    <label for="difficulty" id="difficulty"></label>
+
+    <input id="Easy" type="radio" name="difficulty" value="01">
+    <label for="Easy">Easy</label>
+
+    <input  id="Medium1"   type="radio" name="difficulty" value="02">
+    <label for="Medium1">Medium</label>
+
+    <input id="Hard"   type="radio" name="difficulty" value="03">
+    <label for="Hard">Hard</label>
+
+    <input  id="Very Hard" type="radio" name="difficulty" value="04">
+    <label for="Very Hard">Very Hard</label>
+    </fieldset>
+
+<!---time imput number boxs --->
+
+    <h4>Cook Time</h4>
+    <label for="cookTime">hours</label>
+    <input type="number" id="cookTime" name="hours" required>
+    <label for="cook time">minutes</label>
+    <input type="number" id="cookTime" name="minutes" required>
+
+     <br><br>
+
+      <label for="ingredients">Ingredients:</label>
+      <textarea id="ingredients" name="ingredients" rows="5" required></textarea>
+      <br><br>
+
+      <label for="instructions">Instructions:</label>
+      <textarea id="instructions" name="instructions" rows="5" required></textarea>
+      <br><br>
+
+
+      <!---image upload & submit--->
+     
+
+<label for="image">Upload Image:</label>
+      <input type="file" id="image" name="image" accept="image/*">
+      <br><br>
+
+      <button type="submit">Submit Recipe</button>
+  </form>
+
+
+  <!---validation js--->
+  
+  
+  <script>
+      document.getElementById("recipeForm").addEventListener("submit", function(event) {
+          if (!this.checkValidity()) {
+              alert("Please fill out all fields correctly.");
+              event.preventDefault();
+          }
+      });
+  </script>
+
+  <!---thank you pop up --->
+
+  
+
+
+
+
+
+
+<!---footer--->
+
+      </main>
+<footer>cooking for dummies© 2025</footer>
+    </body>
+  </html>
+</doctype>

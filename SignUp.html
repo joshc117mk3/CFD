@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="CFD.css">
+
+<html>
+  <head>
+    <title>Sign-Up</title>
+    
+    
+    <!-- Add Google Identity Services Script -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  
+  </head>
+  
+  
+  <body>
+    <!---navbar--->
+      
+    <nav> <ul>
+      <li><a href="CFD.html">Home</a></li>
+      <li><a href="Methods.html">Methods</a></li>
+      <li><a href="SignUp.html">Sign-Up</a></li>
+      <li><a href="Recipies.html">Recipies</a></li>
+      <li><a href="Community Recipies.html">Community Recipies</a></li>
+    <main>
+      <h1>Sign-Up</h1>
+      <p>Join our community and start sharing your recipes!</p>
+     
+<img src="" alt="">
+
+      <section>
+        <h2>Sign-Up Form</h2>
+        <form action="submit_form.html" method="post">
+          <fieldset>
+            <legend>Join Us</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Sign Up</button>
+            <h3>Or sign up with Google</h3>
+             <!-- Custom Google Sign-In Button -->
+            <button type="button" onclick="handleGoogleSignUp()">Sign Up with Google</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- Add Google Sign-In Button -->
+      <section>
+      
+        <div id="g_id_onload"
+             data-client_id="YOUR_GOOGLE_CLIENT_ID"
+             data-login_uri="YOUR_LOGIN_URI"
+             data-auto_prompt="false">
+        
+       
+        
+      
+        
+        
+        <script>
+          // Function to handle Google Sign-Up
+          function handleGoogleSignUp() {
+            google.accounts.id.prompt(); // Trigger Google Sign-In prompt
+          }
+
+          // Handle the Google Sign-In response
+          function handleCredentialResponse(response) {
+            // You can send this response to your server for further processing
+            console.log("Credential Response: ", response);
+          }
+
+          // Automatically render the Google Sign-In button
+          google.accounts.id.initialize({
+            client_id: "YOUR_GOOGLE_CLIENT_ID", // Replace with your client ID
+            callback: handleCredentialResponse
+          });
+        </script>
+      </section>
+    </main>
+
+    <footer>cooking for dummies© 2025</footer>
+  </body>
+</html>
