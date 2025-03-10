@@ -1,85 +1,117 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="CFD.css">
-
-<html>
-  <head>
+<html lang="en-gb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CFD.css">
     <title>Sign-Up</title>
-    
-    
-    <!-- Add Google Identity Services Script -->
+    <!-- Load Google Sign-In API -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-  
-  </head>
-  
-  
-  <body>
-    <!---navbar--->
-      
-    <nav> <ul>
-      <li><a href="CFD.html">Home</a></li>
-      <li><a href="Methods.html">Methods</a></li>
-      <li><a href="SignUp.html">Sign-Up</a></li>
-      <li><a href="Recipies.html">Recipies</a></li>
-      <li><a href="Community Recipies.html">Community Recipies</a></li>
+    
+</head>
+<body>
+  <section class="SignUp">
+  <nav>
+        <ul>
+            <li><a href="CFD.html">Home</a></li>
+            <li><a href="Recipies.html">Recipes</a></li>
+            <li><a href="Methods.html">Methods</a></li>
+            <li><a href="Community Recipies.html">Community Recipes</a></li>
+            <li><a href="SignUp.html">Sign-Up</a></li>
+        </ul>
+    </nav>
+
     <main>
-      <h1>Sign-Up</h1>
-      <p>Join our community and start sharing your recipes!</p>
-     
-<img src="" alt="">
-
-      <section>
-        <h2>Sign-Up Form</h2>
-        <form action="submit_form.html" method="post">
-          <fieldset>
-            <legend>Join Us</legend>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Sign Up</button>
-            <h3>Or sign up with Google</h3>
-             <!-- Custom Google Sign-In Button -->
-            <button type="button" onclick="handleGoogleSignUp()">Sign Up with Google</button>
-          </fieldset>
+        <h1>Sign-Up</h1>
+        <p>Join our community and start sharing your recipes!</p>
+        
+        <form action="submit_form.php" method="post" id="signupForm">
+            <fieldset>
+                <legend>Join Us</legend>
+                
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required minlength="6">
+                </div>
+                
+                <button type="submit">Sign Up</button>
+                
+                <div class="google-signin-wrapper">
+                    <h3>Or sign up with Google</h3>
+                    <!-- Google Sign-In Button -->
+                    <div id="g_id_onload"
+                         data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                         data-callback="handleCredentialResponse"
+                         data-auto_prompt="false">
+                    </div>
+                    <div class="g_id_signin"
+                         data-type="standard"
+                         data-size="large"
+                         data-theme="outline"
+                         data-text="signup_with"
+                         data-shape="rectangular"
+                         data-logo_alignment="left">
+                    </div>
+                </div>
+            </fieldset>
         </form>
-      </section>
-
-      <!-- Add Google Sign-In Button -->
-      <section>
-      
-        <div id="g_id_onload"
-             data-client_id="YOUR_GOOGLE_CLIENT_ID"
-             data-login_uri="YOUR_LOGIN_URI"
-             data-auto_prompt="false">
-        
-       
-        
-      
-        
-        
-        <script>
-          // Function to handle Google Sign-Up
-          function handleGoogleSignUp() {
-            google.accounts.id.prompt(); // Trigger Google Sign-In prompt
-          }
-
-          // Handle the Google Sign-In response
-          function handleCredentialResponse(response) {
-            // You can send this response to your server for further processing
-            console.log("Credential Response: ", response);
-          }
-
-          // Automatically render the Google Sign-In button
-          google.accounts.id.initialize({
-            client_id: "YOUR_GOOGLE_CLIENT_ID", // Replace with your client ID
-            callback: handleCredentialResponse
-          });
-        </script>
-      </section>
     </main>
+  </section>
+    <footer>Cooking for Dummies © 2025</footer>
 
-    <footer>cooking for dummies© 2025</footer>
-  </body>
+    <script>
+        // Initialize Google Sign-In
+        function initializeGoogleSignIn() {
+            google.accounts.id.initialize({
+                client_id: "YOUR_GOOGLE_CLIENT_ID", // Replace with your actual Google Client ID
+                callback: handleCredentialResponse,
+                auto_select: false
+            });
+            
+            // Render the Google Sign-In button
+            google.accounts.id.renderButton(
+                document.querySelector('.g_id_signin'),
+                {
+                    type: 'standard',
+                    theme: 'outline',
+                    size: 'large',
+                    text: 'signup_with',
+                    shape: 'rectangular',
+                    logo_alignment: 'left'
+                }
+            );
+        }
+
+        // Handle Google Sign-In response
+        function handleCredentialResponse(response) {
+            console.log("Encoded JWT ID token: " + response.credential);
+            alert("Successfully signed up with Google!");
+        }
+
+        // Form validation
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            if (!this.checkValidity()) {
+                event.preventDefault();
+                alert("Please fill out all fields correctly.");
+            } else {
+                event.preventDefault(); // Remove for actual submission
+                alert("Successfully signed up!");
+                this.reset();
+            }
+        });
+
+        // Load Google Sign-In when page loads
+        window.onload = initializeGoogleSignIn;
+    </script>
+</body>
 </html>
