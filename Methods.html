@@ -2,20 +2,18 @@
 <html>
 <head>
     <title>Methods</title>
-    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="CFD.css">
+
 </head>
 <body>
-
     <!-- Navigation Bar -->
-    <nav>
+    <nav> 
         <ul>
-            <!-- Navigation links to different pages -->
             <li><a href="CFD.html">Home</a></li>
+            <li><a href="Recipies.html">Recipes</a></li>
             <li><a href="Methods.html">Methods</a></li>
+            <li><a href="Community Recipies.html">Community Recipes</a></li>
             <li><a href="SignUp.html">Sign-Up</a></li>
-            <li><a href="Recipies.html">Recipies</a></li>
-            <li><a href="Community Recipies.html">Community Recipies</a></li>
         </ul>
     </nav>
 
@@ -29,7 +27,6 @@
 
         <!-- Button Navigation for methods -->
         <div class="methods-nav">
-            <!-- Each button calls the toggleSection() function to show a specific section -->
             <button onclick="toggleSection('brining')">Brining</button>
             <button onclick="toggleSection('rubs')">Rubs</button>
             <button onclick="toggleSection('marinading')">Marinading</button>
@@ -37,37 +34,59 @@
             <button onclick="toggleSection('layering')">Layering</button>
         </div>
 
-        <!-- Method Sections (Initially Hidden) -->
-        <div id="brining" class="method-section">
-            <h2>Brining</h2>
-            <p>Brining improves the ability for lean cuts of meat (such as turkey, chicken, and pork) 
-                to retain their moisture during the cooking process.</p>
-            <img src="" alt="Image of a whole chicken in a brine">
-        </div>
+        <!-- Method Sections -->
+        <section>
+            <div id="brining" class="method-section hidden">
+                <div class="method-image">
+                    <img src="images for website\chicken-brine.jpg" alt="Image of a whole chicken in a brine">
+                </div>
+                <div>
+                    <h2>Brining</h2>
+                    <p>Brining improves the ability for lean cuts of meat (such as turkey, chicken, and pork) 
+                        to retain their moisture during the cooking process.</p>
+                </div>
+            </div>
 
-        <div id="rubs" class="method-section">
-            <h2>Rubs</h2>
-            <p>Dry rubs are great on their own but can be spectacular when finished with a sauce.</p>
-            <img src="" alt="Image of dry-rubbed ribs">
-        </div>
+            <div id="rubs" class="method-section hidden">
+                <div class="method-image">
+                    <img src="images for website\dry rub.jpg" alt="Image of meat with dry rub">
+                </div>
+                <div>
+                    <h2>Rubs</h2>
+                    <p>Dry rubs are great on their own but can be spectacular when finished with a sauce.</p>
+                </div>
+            </div>
 
-        <div id="marinading" class="method-section"> 
-            <h2>Marinading</h2>
-            <p>Marinating meat works by adding flavor and aiding texture.</p>
-            <img src="" alt="Image of different marinades in bowls">
-        </div>
+            <div id="marinading" class="method-section hidden">
+                <div class="method-image">
+                    <img src="images for website\Marinades-V2.jpg" alt="Image of meat marinating">
+                </div>
+                <div>
+                    <h2>Marinading</h2>
+                    <p>Marinating meat works by adding flavor and aiding texture.</p>
+                </div>
+            </div>
 
-        <div id="taste" class="method-section">
-            <h2>Taste</h2>
-            <p>You should be tasting each component throughout the cooking process.</p>
-            <img src="" alt="Image of different tasting and textured herbs">
-        </div>
+            <div id="taste" class="method-section hidden">
+                <div class="method-image">
+                    <img src="images for website\taste.webp" alt="Image of different tasting and textured herbs">
+                </div>
+                <div>
+                    <h2>Taste</h2>
+                    <p>You should be tasting each component throughout the cooking process.</p>
+                </div>
+            </div>
 
-        <div id="layering" class="method-section">
-            <h2>Layering</h2>
-            <p>Layering ingredients allows some items time to soften or season longer, creating depth of flavor.</p>
-            <img src="" alt="Chef layering food on a plate">
-        </div>
+            <div id="layering" class="method-section hidden">
+                <div class="method-image">
+                    <img src="images for website\layering flavors.jpg" alt="Image of layered ingredients">
+                </div>
+                <div>
+                    <h2>Layering</h2>
+                    <p>Layering ingredients allows some items time to soften or season longer, creating depth of flavor.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -76,22 +95,20 @@
     <!-- JavaScript for Section Toggle -->
     <script>
         function toggleSection(id) {
-            let section = document.getElementById(id); // Get the selected section
-            let allSections = document.querySelectorAll('.method-section'); // Get all method sections
-
-            // Hide all sections first
-            allSections.forEach(sec => sec.style.display = 'none');
-
-            // Show the selected section
-            section.style.display = 'block';
+            const sections = document.querySelectorAll('.method-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            const selectedSection = document.getElementById(id);
+            selectedSection.classList.remove('hidden');
         }
 
         // Hide all sections when the page loads
-        window.onload = function () {
-            document.querySelectorAll('.method-section').forEach(sec => sec.style.display = 'none');
+        window.onload = function() {
+            document.querySelectorAll('.method-section').forEach(section => {
+                section.classList.add('hidden');
+            });
         };
     </script>
-
 </body>
 </html>
-
