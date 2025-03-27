@@ -62,10 +62,10 @@
 
        
 ## Actions
- [] move css link inside head tag 
- [] fix doctype placement 
- [] fix spelling errors
- [] improve formating and structural
+ [X] move css link inside head tag 
+ [X] fix doctype placement 
+ [X] fix spelling errors
+ [X] improve formating and structural
 - Commit your changes to GitHub!! Comment e.g.,"conduct code review"
 - NOW make your changes to your code!! DO NOT DO THIS BEFORE!!!!!!!
 - Commit your code changes 🦭 Comment e.g.,"action code review"
