@@ -303,6 +303,7 @@ Improve alt attributes for accessibility:
 Improve validation and feedback
 [] SEO Optimization:
 Add meta tags
+[] fix image styling 
 
 
 
