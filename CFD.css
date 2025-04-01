@@ -63,7 +63,7 @@ main {
 /* Card Styling */
 .recipe-card,
 .method-section,
-.My-Recipies-section {
+.My-Recipes-section { 
     display: grid;
     gap: 20px;
     padding: 20px;
@@ -73,15 +73,7 @@ main {
     max-width: 1200px;
 }
 
-.recipe-card {
-    grid-template-columns: 1fr 2fr 1fr;
-}
-
-.method-section {
-    grid-template-columns: 1fr 2fr;
-}
-
-.My-Recipies-section {
+.My-Recipes-section { 
     display: none;
     width: 60%;
     background: rgba(0, 0, 0, 0);
@@ -121,14 +113,12 @@ main {
 }
 
 /* Navigation Buttons */
-.My-Recipies-nav,
-.methods-nav {
+.My-Recipes-nav { 
     text-align: center;
     margin: 20px 0;
 }
 
-.My-Recipies-nav button,
-.methods-nav button {
+.My-Recipes-nav button { 
     background-color: #bbff3b;
     color: white;
     text-shadow: 2px 2px 4px #000000;
@@ -141,11 +131,9 @@ main {
     transition: background-color 0.3s;
 }
 
-.My-Recipies-nav button:hover,
-.methods-nav button:hover {
+.My-Recipes-nav button:hover { 
     background-color: #a2f900;
 }
-
 /* General Buttons */
 button {
     background-color: #bbff3b;

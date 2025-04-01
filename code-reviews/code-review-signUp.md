@@ -125,14 +125,11 @@
 </html>
 
 ## Actions
-   [] fix spelling 
+   [] fix spelling in body 
    [] review nav bar 
    [] review footer  
    [] enhance form validation 
+   [x] fixed spelling across html files and css
 
         
-        
-        **add a bullet point list of what you plan to action here**
-- Commit your changes to GitHub!! Comment e.g.,"conduct code review"
-- NOW make your changes to your code!! DO NOT DO THIS BEFORE!!!!!!!
-- Commit your code changes 🦭 Comment e.g.,"action code review"
+
