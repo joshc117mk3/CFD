@@ -125,10 +125,10 @@
 </html>
 
 ## Actions
-   [] fix spelling in body 
-   [] review nav bar 
-   [] review footer  
-   [] enhance form validation 
+   [x] fix spelling in body 
+   [x] review nav bar 
+   [x] review footer  
+   [x] enhance form validation 
    [x] fixed spelling across html files and css
 
         

@@ -63,6 +63,3 @@
  [X] fix spelling errors in body
  [X] improve formating and structural
  [x] fixed spelling across html files and css
-- Commit your changes to GitHub!! Comment e.g.,"conduct code review"
-- NOW make your changes to your code!! DO NOT DO THIS BEFORE!!!!!!!
-- Commit your code changes 🦭 Comment e.g.,"action code review"
