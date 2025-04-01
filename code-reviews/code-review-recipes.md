@@ -337,11 +337,11 @@
 </html>
 
 ## Actions
-     [] review ids make them consistant 
-     [] add meta 
-     [] make alt tags more descriptive 
-     [] correct spellings 
-     [] review ingreedients make consistant
+     [x] review ids make them consistant 
+     [x] add meta 
+     [x] make alt tags more descriptive 
+     [x] correct spellings 
+     [x] review ingreedients make consistant
      [x] fixed spelling across html files and css 
         
 

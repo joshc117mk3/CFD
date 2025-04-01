@@ -232,6 +232,7 @@ button:hover {
 
 .Community-Recipes .recipe-card {
     grid-template-columns: 1fr;
+    
 }
 
 .Community-Recipes .rating {
