@@ -65,7 +65,7 @@ main {
 .recipe-card,
 .method-section,
 .My-Recipies-section { 
-    display: grid;
+    /* Removed grid display since .recipe-card uses block and .My-Recipies-section uses none/block */
     gap: 20px;
     padding: 20px;
     margin: 20px auto;
@@ -75,16 +75,16 @@ main {
 }
 
 .My-Recipies-section { 
-    display: none; /* Changed for toggle functionality */
-    width: 100%; /* Changed from 60% to allow flex container to control width */
+    display: none; /* For toggle functionality */
+    width: 100%; /* Full width for flex container */
     background: rgba(0, 0, 0, 0);
     margin: 20px auto;
-    padding: 0; /* Remove padding here, let children handle it */
+    padding: 0; /* Children handle padding */
 }
 
 .recipe-image,
 .method-image {
-    grid-column: 1 / 2;
+    grid-column: 1 / 2; /* Kept for backward compatibility if used elsewhere */
 }
 
 .recipe-image img,
@@ -95,8 +95,9 @@ main {
     display: block;
 }
 
-.recipe-content p,
-.recipe-content ol,
+/* Removed .recipe-content since it's not used in new structure */
+/* Removed .ingredients ul and .instructions ol since we use tables and .instructions-card now */
+.recipe-card p,
 .method-section p {
     font-size: 20px;
     margin: 0;
@@ -106,7 +107,6 @@ main {
 .method-section p {
     border-radius: 10px;
 }
-
 
 /* New Container Styles */
 .recipe-container {
@@ -133,11 +133,11 @@ main {
 /* Recipe Card (Center) */
 .recipe-card {
     width: 40%;
-    background: rgba(192, 246, 54, 0.748); /* Match existing card background */
+    background: rgba(192, 246, 54, 0.748);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    display: block; /* Override grid from original CSS */
+    display: block; /* Override any grid */
 }
 
 .instructions-card {
@@ -148,12 +148,13 @@ main {
 .instructions-card ol {
     padding-left: 30px;
     font-size: 20px;
+    margin: 0; /* Ensure no extra margins */
 }
 
 /* Ingredients Card (Right) */
 .ingredients-card {
     width: 25%;
-    background: rgba(192, 246, 54, 0.748); /* Match existing card background */
+    background: rgba(192, 246, 54, 0.748);
     padding: 20px;
     border-radius: 10px;
 }
