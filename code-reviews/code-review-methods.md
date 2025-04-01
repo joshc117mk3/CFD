@@ -117,8 +117,8 @@
 </html>
 
 ## Actions
-[] more descriptive alt tags 
-[] add meta 
-[] fix file paths for images 
+[x] more descriptive alt tags 
+[x] add meta 
+[x] fix file paths for images 
 [x] fixed spelling across html files and css
 

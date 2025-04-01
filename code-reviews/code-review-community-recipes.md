@@ -289,17 +289,17 @@
 
 
  ## Actions
-[] Semantic Structure:
+[x] Semantic Structure:
 Add proper HTML5 structure and move <footer> outside <section>
-[] Image Alt Text:
+[x] Image Alt Text:
 Improve alt attributes for accessibility:
-[] Image Alt Text:
+[x] Image Alt Text:
 Improve alt attributes for accessibility:
-[] Form Submission:
+[x] Form Submission:
 Improve validation and feedback
-[] SEO Optimization:
+[x] SEO Optimization:
 Add meta tags
-[] fix submited recipe card so image is a fix size
+[x] fix submited recipe card so image is a fix size
 [x] fixed spelling across html files and css
 
 
