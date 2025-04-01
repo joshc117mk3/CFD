@@ -97,9 +97,7 @@ main {
 
 .recipe-content p,
 .recipe-content ol,
-.method-section p,
-.ingredients ul,
-.instructions ol {
+.method-section p, {
     font-size: 20px;
     margin: 0;
     padding: 10px;
@@ -109,10 +107,6 @@ main {
     border-radius: 10px;
 }
 
-.ingredients ul,
-.instructions ol {
-    padding-left: 30px;
-}
 
 /* New Container Styles */
 .recipe-container {
