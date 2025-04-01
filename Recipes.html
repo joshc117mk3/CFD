@@ -304,17 +304,29 @@
         <footer>Cooking For Dummies © 2025</footer>
     </main>
 
-<script>
-  function toggleSection(id) {
-    console.log("Toggling section: " + id); // Debug log
-    let sections = document.querySelectorAll('.My-Recipies-section');
-    sections.forEach(sec => sec.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-}
+    <script>
+      function toggleSection(id) {
+          console.log("Toggling: " + id); // Debug to check if function runs
+          let sections = document.querySelectorAll('.My-Recipies-section');
+          sections.forEach(sec => {
+              sec.style.display = 'none';
+              console.log("Hiding: " + sec.id); // Debug hidden sections
+          });
+          let activeSection = document.getElementById(id);
+          if (activeSection) {
+              activeSection.style.display = 'block';
+              console.log("Showing: " + id); // Debug shown section
+          } else {
+              console.error("Section not found: " + id);
+          }
+      }
 
-  window.onload = function() {
-    document.querySelectorAll('.My-Recipies-section').forEach(sec => sec.style.display = 'none');
-};
-</script>
+      window.onload = function() {
+          console.log("Page loaded, hiding all sections");
+          document.querySelectorAll('.My-Recipies-section').forEach(sec => {
+              sec.style.display = 'none';
+          });
+      };
+  </script>
 </body>
 </html>
