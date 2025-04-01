@@ -97,7 +97,7 @@ main {
 
 .recipe-content p,
 .recipe-content ol,
-.method-section p, {
+.method-section p {
     font-size: 20px;
     margin: 0;
     padding: 10px;
