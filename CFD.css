@@ -6,7 +6,7 @@ body {
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
     padding: 0 15px;
-    background-image: url("images for website/main bg.jpeg");
+    background-image: url("images/main bg.jpeg");
     background-size: 1920px 1080px;
     background-repeat: repeat-y;
     min-height: 100vh;
