@@ -355,16 +355,17 @@
         <footer>Cooking For Dummies © 2025</footer>
     </main>
 
-    <script>
-        function toggleSection(id) {
-            let sections = document.querySelectorAll('.My-Recipies-section');
-            sections.forEach(sec => sec.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
-        }
+<script>
+  function toggleSection(id) {
+    console.log("Toggling section: " + id); // Debug log
+    let sections = document.querySelectorAll('.My-Recipies-section');
+    sections.forEach(sec => sec.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
 
-        window.onload = function() {
-            document.querySelectorAll('.My-Recipies-section').forEach(sec => sec.style.display = 'none');
-        };
-    </script>
+  window.onload = function() {
+    document.querySelectorAll('.My-Recipies-section').forEach(sec => sec.style.display = 'none');
+};
+</script>
 </body>
 </html>
