@@ -301,6 +301,7 @@ Improve validation and feedback
 Add meta tags
 [] fix submited recipe card so image is a fix size
 [x] fixed spelling across html files and css
+[] fix image styling 
 
 
 
