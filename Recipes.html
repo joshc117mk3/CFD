@@ -32,7 +32,7 @@
 
         <section class="My-Recipes-section">
             <!-- Curry Goat -->
-            <div id="Curry-Goat" class="recipe-card" style="display: none;">
+            <div id="Curry-Goat" class="recipe-card">
                 <div class="recipe-image">
 
                     <img src="./images/Curry-Goat.jpg" alt="image of curry goat">
@@ -83,7 +83,7 @@
             </div>
 
             <!-- Brown Stew Chicken -->
-            <div id="Brown-Stew-Chicken" class="recipe-card" style="display: none;">
+            <div id="Brown-Stew-Chicken" class="recipe-card">
                 <div class="recipe-image">
 
                     <img src="./images/BStew-Chicken.jpg" alt="image of brown stew chicken">
@@ -139,7 +139,7 @@
             </div>
 
             <!-- Rice and Peas -->
-            <div id="Rice-and-Peas" class="recipe-card" style="display: none;">
+            <div id="Rice-and-Peas" class="recipe-card">
                 <div class="recipe-image">
 
                     <img src="./images/-rice-and-peas.jpg" alt="image of rice and peas">
@@ -184,7 +184,7 @@
                 </div>
             </div>
             <!-- Corned-Beef-Rice -->
-            <div id="Corned-Beef-Rice" class="recipe-card" style="display: none;">
+            <div id="Corned-Beef-Rice" class="recipe-card">
               <div class="recipe-image">
 
                   <img src="./images/corned beef.jpg" alt="image of rice and peas">
@@ -224,7 +224,7 @@
               </div>
           </div>
           <!-- Spaghetti-Bolognese -->
-          <div id="Spaghetti-Bolognese" class="recipe-card" style="display: none;">
+          <div id="Spaghetti-Bolognese" class="recipe-card">
             <div class="recipe-image">
 
                 <img src="./images/spaghetti bolognese.jpeg" alt="image of rice and peas">
@@ -287,7 +287,7 @@
             </div>
         </div>
         <!--- minted lamb stew --->
-        <div id="Minted-Lamb-Stew" class="recipe-card" style="display: none;">
+        <div id="Minted-Lamb-Stew" class="recipe-card">
           <div class="recipe-image">
 
               <img src="./images/minted lamb stew.jpg" alt="image of rice and peas">
@@ -330,17 +330,21 @@
     </main>
 
     <script>
-        function toggleSection(id) {
-            let section = document.getElementById(id);
-            let allSections = document.querySelectorAll('.recipe-card');
-
-            allSections.forEach(sec => sec.style.display = 'none');
-            section.style.display = 'grid';
-        }
-
-        window.onload = function() {
-            document.querySelectorAll('.recipe-card').forEach(sec => sec.style.display = 'none');
-        };
-    </script>
+      function toggleSection(id) {
+          let section = document.getElementById(id);
+          let allSections = document.querySelectorAll('.recipe-card');
+          allSections.forEach(sec => sec.style.display = 'none');
+          if (section) {
+              section.style.display = 'grid';
+          }
+      }
+  
+      window.onload = function() {
+          let allSections = document.querySelectorAll('.recipe-card');
+          allSections.forEach(sec => sec.style.display = 'none');
+          // Show "Curry-Goat" by default
+          document.getElementById('Curry-Goat').style.display = 'grid';
+      };
+  </script>
 </body>
 </html>
