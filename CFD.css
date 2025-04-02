@@ -8,9 +8,8 @@ body {
     padding: 0 15px;
     background-image: url("./images/main bg.jpeg");
     background-size: 1920px 1080px;
-    background-attachment: scroll;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-attachment: fixed, scroll;
+    background-repeat: no-repeat, repeat-y;
     min-height: 100vh;
     box-sizing: border-box;
 }
