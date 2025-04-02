@@ -280,9 +280,12 @@ button:hover {
 }
 
 .Community-Recipes .community-cooking img {
-    max-width: 100%;
+    max-width: 25%;
     height: auto;
     border-radius: 5px;
+    margin: 0 auto;
+    display: block;
+    
 }
 
 .Community-Recipes .recipes-container {
