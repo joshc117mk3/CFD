@@ -8,7 +8,7 @@ body {
     padding: 0 15px;
     background-image: url("./images/main bg.jpeg");
     background-size: 1920px 1080px;
-    background-repeat: repeat-y;
+    background-attachment: scroll;
     min-height: 100vh;
     box-sizing: border-box;
 }
@@ -290,7 +290,7 @@ button:hover {
 
 }
 .Community-Recipes .recipe-image img {
-    max-width: 25%;
+    max-width: 75%;
     height: auto;
     border-radius: 5px;
     margin: 0 auto;
