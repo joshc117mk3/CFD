@@ -113,11 +113,13 @@ main {
 }
 
 /* Image Container (Left) */
+.recipe-image,
 .method-image,
 .image-container {
     width: 25%;
     padding: 20px;
 }
+.recipe-image,
 .method-image img,
 .image-container img {
     width: 100%;
@@ -280,12 +282,12 @@ button:hover {
 }
 
 .Community-Recipes .community-cooking img {
-    max-width: 25%;
+    max-width: 60%;
     height: auto;
     border-radius: 5px;
     margin: 0 auto;
     display: block;
-    
+
 }
 
 .Community-Recipes .recipes-container {
