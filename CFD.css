@@ -65,35 +65,28 @@ main {
 .recipe-card,
 .method-section,
 .My-Recipies-section { 
-    display: grid;
+    display: none;
     gap: 20px;
     padding: 20px;
     margin: 20px auto;
     border-radius: 10px;
     background-color: rgba(192, 246, 54, 0.748);
     max-width: 1200px;
+    width: 100%;
+    padding: 0;
+    
+    
 }
-
+.method-section,
 .My-Recipies-section { 
-    display: none; /* Changed for toggle functionality */
-    width: 100%; /* Changed from 60% to allow flex container to control width */
+    display: none; 
+    width: 100%; 
     background: rgba(0, 0, 0, 0);
     margin: 20px auto;
-    padding: 0; /* Remove padding here, let children handle it */
+    padding: 0;
 }
 
-.recipe-image,
-.method-image {
-    grid-column: 1 / 2;
-}
 
-.recipe-image img,
-.method-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    display: block;
-}
 
 .recipe-content p,
 .recipe-content ol,
@@ -109,6 +102,7 @@ main {
 
 
 /* New Container Styles */
+.method-container,
 .recipe-container {
     display: flex;
     justify-content: center;
@@ -119,11 +113,12 @@ main {
 }
 
 /* Image Container (Left) */
+.method-image,
 .image-container {
     width: 25%;
     padding: 20px;
 }
-
+.method-image img,
 .image-container img {
     width: 100%;
     height: auto;
@@ -131,13 +126,24 @@ main {
 }
 
 /* Recipe Card (Center) */
+
 .recipe-card {
     width: 40%;
-    background: rgba(192, 246, 54, 0.748); /* Match existing card background */
+    background: rgba(192, 246, 54, 0.748); 
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     display: block; /* Override grid from original CSS */
+}
+
+.method-text {
+    width: 75%;
+    background: rgba(192, 246, 54, 0.748); 
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: block; /* Override grid from original CSS */
+
 }
 
 .instructions-card {
