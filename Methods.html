@@ -36,58 +36,71 @@
         </div>
 
         <!-- Method Sections -->
-        <section>
-            <div id="brining" class="method-section hidden">
-                <div class="method-image">
-                    <img src="./images/chicken-brine.jpg" alt="A whole raw chicken submerged in a saltwater brine solution in a large bowl">
+        
+            <section id="brining" class="method-section hidden">
+                <div class="method-container">
+                    <div class="method-image">
+                        <img src="./images/chicken-brine.jpg" alt="A whole raw chicken submerged in a saltwater brine solution in a large bowl">
+                    </div>
+                    <div class="method-text">
+                        <h2>Brining</h2>
+                        <p>Brining meat, or soaking it in a salt solution, helps to retain moisture, tenderize the meat, and infuse it with flavor, especially beneficial for lean cuts like chicken and pork. Brining helps prevent lean meats from drying out during cooking by allowing the meat to absorb water, which then gets trapped inside the muscle fibers. Brining also allows flavors from the brine, such as herbs and spices, to penetrate the meat, creating a more flavorful and well-seasoned final product. <br> 
+                            <b>How it Works:</b> <br>
+                            The salt in the brine draws water into the meat through osmosis, and the dissolved proteins in the meat form a gel-like structure that traps the water, preventing it from being lost during cooking. <br>
+                            <b>Brining Process:</b> <br>
+                            Soak the meat in the brine solution for a recommended time, typically a few hours to overnight, depending on the size and type of meat. </p>
+                    </div>                
                 </div>
-                <div>
-                    <h2>Brining</h2>
-                    <p>Brining improves the ability for lean cuts of meat (such as turkey, chicken, and pork) 
-                        to retain their moisture during the cooking process.</p>
-                </div>
-            </div>
+            </section>
 
-            <div id="rubs" class="method-section hidden">
-                <div class="method-image">
-                    <img src="./images/dry rub.jpg" alt="A piece of raw meat coated with a colorful dry spice rub mixture">
+            <section id="rubs" class="method-section hidden">
+                <div class="method-container">
+                    <div class="method-image">
+                        <img src="./images/dry rub.jpg" alt="A piece of raw meat coated with a colorful dry spice rub mixture">
+                    </div>
+                    <div class="method-text">
+                        <h2>Rubs</h2>
+                        <p>Dry rubs are great on their own but can be spectacular when finished with a sauce.</p>
+                    </div>
                 </div>
-                <div>
-                    <h2>Rubs</h2>
-                    <p>Dry rubs are great on their own but can be spectacular when finished with a sauce.</p>
-                </div>
-            </div>
+            </section>
 
-            <div id="marinating" class="method-section hidden">
-                <div class="method-image">
-                    <img src="./images/Marinades-V2.jpg" alt="Chunks of raw meat soaking in a vibrant marinade with herbs and spices in a glass dish">
+            <section id="marinating" class="method-section hidden">
+                <div class="method-container">
+                    <div class="method-image">
+                        <img src="./images/Marinades-V2.jpg" alt="Chunks of raw meat soaking in a vibrant marinade with herbs and spices in a glass dish">
+                    </div>
+                    <div class="method-text">
+                        <h2>Marinating</h2>
+                        <p>Marinating meat works by adding flavor and aiding texture.</p>
+                    </div>
                 </div>
-                <div>
-                    <h2>Marinating</h2>
-                    <p>Marinating meat works by adding flavor and aiding texture.</p>
-                </div>
-            </div>
+            </section>
 
-            <div id="taste" class="method-section hidden">
-                <div class="method-image">
-                    <img src="./images/taste.webp" alt="Image of different tasting and textured herbs and spices in small bowls">
+            <section id="taste" class="method-section hidden">
+                <div class="method-container">
+                    <div class="method-image">
+                        <img src="./images/taste.webp" alt="Image of different tasting and textured herbs and spices in small bowls">
+                    </div>
+                    <div class="method-text">
+                        <h2>Taste</h2>
+                        <p>You should be tasting each component throughout the cooking process.</p>
+                    </div>
                 </div>
-                <div>
-                    <h2>Taste</h2>
-                    <p>You should be tasting each component throughout the cooking process.</p>
-                </div>
-            </div>
+            </section>
 
-            <div id="layering" class="method-section hidden">
-                <div class="method-image">
-                    <img src="./images/layering flavors.jpg" alt="Image of a chef layering different ingredients in a dish, with vibrant colors and textures">
-                </div>
-                <div>
-                    <h2>Layering</h2>
-                    <p>Layering ingredients allows some items time to soften or season longer, creating depth of flavor.</p>
-                </div>
-            </div>
-        </section>
+            <sectioin id="layering" class="method-section hidden">
+                <div class="method-container">
+                    <div class="method-image">
+                        <img src="./images/layering flavors.jpg" alt="Image of a chef layering different ingredients in a dish, with vibrant colors and textures">
+                    </div>
+                    <div class="method-text">
+                        <h2>Layering</h2>
+                        <p>Layering ingredients allows some items time to soften or season longer, creating depth of flavor.</p>
+                    </div>
+                </div>               
+            </section>
+        
     </main>
 
     <!-- Footer -->
@@ -95,21 +108,34 @@
 
     <!-- JavaScript for Section Toggle -->
     <script>
+        console.log("Script loaded"); // Confirm script runs
+
         function toggleSection(id) {
+            console.log("Toggling section: " + id); // Confirm function fires
             const sections = document.querySelectorAll('.method-section');
+            console.log("Found " + sections.length + " sections"); // Confirm sections found
             sections.forEach(section => {
-                section.classList.add('hidden');
+                section.style.display = 'none'; // Hide all sections
+                console.log("Hiding: " + section.id);
             });
             const selectedSection = document.getElementById(id);
-            selectedSection.classList.remove('hidden');
+            if (selectedSection) {
+                selectedSection.style.display = 'block'; // Show selected section
+                console.log("Showing: " + id);
+            } else {
+                console.error("Section not found: " + id);
+            }
         }
 
-        // Hide all sections when the page loads
         window.onload = function() {
-            document.querySelectorAll('.method-section').forEach(section => {
-                section.classList.add('hidden');
+            console.log("Window loaded, hiding sections");
+            const sections = document.querySelectorAll('.method-section');
+            sections.forEach(section => {
+                section.style.display = 'none'; // Hide all on load
             });
+            console.log("All sections hidden on load");
+
         };
-    </script>
+    </script>>
 </body>
 </html>

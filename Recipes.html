@@ -31,7 +31,7 @@
         </div>
 
         <!-- Curry Goat -->
-        <div id="Curry-Goat" class="My-Recipies-section">
+        <section id="Curry-Goat" class="My-Recipies-section hidden">
             <div class="recipe-container">
                 <div class="image-container">
                     <img src="./images/Curry-Goat.jpg" alt="A plate of tender Jamaican curry goat with rich, spiced gravy served alongside rice and peas">
@@ -76,10 +76,10 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Brown Stew Chicken -->
-        <div id="Brown-Stew-Chicken" class="My-Recipies-section">
+        <section id="Brown-Stew-Chicken" class="My-Recipies-section hidden">
             <div class="recipe-container">
                 <div class="image-container">
                     <img src="./images/BStew-Chicken.jpg" alt="A dish of succulent brown stew chicken with caramelized onions and peppers in a thick, savory sauce">
@@ -128,10 +128,10 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Rice and Peas -->
-        <div id="Rice-and-Peas" class="My-Recipies-section">
+        <section id="Rice-and-Peas" class="My-Recipies-section hidden">
             <div class="recipe-container">
                 <div class="image-container">
                     <img src="./images/-rice-and-peas.jpg" alt="A bowl of Jamaican rice and peas featuring fluffy white rice mixed with red kidney beans">
@@ -171,10 +171,10 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Corned Beef & Rice -->
-        <div id="Corned-Beef-Rice" class="My-Recipies-section">
+        <section id="Corned-Beef-Rice" class="My-Recipies-section hidden">
             <div class="recipe-container">
                 <div class="image-container">
 
@@ -240,10 +240,10 @@
                             <li>Drain the spaghetti and either stir into the bolognese sauce, or serve the sauce on top. Serve with more grated parmesan, 
                               the remaining basil leaves and crusty bread, if you like.</li>
             </div>
-        </div>
+        </section>
 
         <!-- Spaghetti Bolognese -->
-        <div id="Spaghetti-Bolognese" class="My-Recipies-section">
+        <section id="Spaghetti-Bolognese" class="My-Recipies-section hidden">
             <div class="recipe-container">
                 <div class="image-container">
                     <img src="./images/spaghetti bolognese.jpeg" alt="A plate of spaghetti bolognese topped with a hearty meat sauce, grated parmesan, and fresh basil">
@@ -293,10 +293,10 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Minted Lamb Stew -->
-        <div id="Minted-Lamb-Stew" class="My-Recipies-section">
+        <section id="Minted-Lamb-Stew" class="My-Recipies-section hidden">
             <div class="recipe-container">
                 <div class="image-container">
                     <img src="./images/minted lamb stew.jpg" alt="A bowl of minted lamb stew with chunks of lamb, diced potatoes, and carrots in a fragrant, herb-infused broth">
@@ -350,20 +350,39 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </section>
 
         <footer>Cooking For Dummies © 2025</footer>
     </main>
 
     <script>
+        console.log("Script loaded"); // Confirm script runs
+
         function toggleSection(id) {
-            let sections = document.querySelectorAll('.My-Recipies-section');
-            sections.forEach(sec => sec.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
+            console.log("Toggling section: " + id); // Confirm function fires
+            const sections = document.querySelectorAll('.My-Recipies-section');
+            console.log("Found " + sections.length + " sections"); // Confirm sections found
+            sections.forEach(section => {
+                section.style.display = 'none'; // Hide all sections
+                console.log("Hiding: " + section.id);
+            });
+            const selectedSection = document.getElementById(id);
+            if (selectedSection) {
+                selectedSection.style.display = 'block'; // Show selected section
+                console.log("Showing: " + id);
+            } else {
+                console.error("Section not found: " + id);
+            }
         }
 
         window.onload = function() {
-            document.querySelectorAll('.My-Recipies-section').forEach(sec => sec.style.display = 'none');
+            console.log("Window loaded, hiding sections");
+            const sections = document.querySelectorAll('.My-Recipies-section');
+            sections.forEach(section => {
+                section.style.display = 'none'; // Hide all on load
+            });
+            console.log("All sections hidden on load");
+
         };
     </script>
 </body>
